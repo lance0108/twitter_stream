@@ -30,6 +30,10 @@ def insert_tweet(conn, table_name, tweet):
         VALUES (%s, %s, %s, %s)
     """
     tweet_j = json.dumps(tweet)
+    if "id" not in tweet.keys():
+        print(tweet)
+        return False
+    
     values = (
         tweet["id"],
         tweet["created_at"],
