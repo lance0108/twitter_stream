@@ -36,7 +36,11 @@ def insert_tweet(conn, table_name, tweet):
         tweet["lang"],
         tweet_j
     )
-    cur.execute(q_insert, values)
+    try:
+        cur.execute(q_insert, values)
+    except Exception as e:
+        print(e)
+        return False
     return True
 
 
