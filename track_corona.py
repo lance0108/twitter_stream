@@ -11,9 +11,9 @@ if __name__ == "__main__":
         "covid_19",
         "covid-19",
         "covid19",
-        "CoronaVirusUpdate",
-        "cdc",
-        "CoronavirusOutbreak"
+        # "CoronaVirusUpdate",
+        # "cdc",
+        # "CoronavirusOutbreak"
     ]
     while True:
         try:

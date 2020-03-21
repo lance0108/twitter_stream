@@ -33,7 +33,7 @@ def insert_tweet(conn, table_name, tweet):
     if "id" not in tweet.keys():
         print(tweet)
         return False
-    
+
     values = (
         tweet["id"],
         tweet["created_at"],
