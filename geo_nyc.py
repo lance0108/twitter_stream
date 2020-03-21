@@ -1,7 +1,7 @@
 import time
 
 from credentials import API_CREDENTIALS
-from steaming import get_time, start_streaming
+from streaming import get_time, start_streaming
 
 if __name__ == "__main__":
     credential = API_CREDENTIALS[1582449]
