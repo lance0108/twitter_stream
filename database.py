@@ -42,7 +42,9 @@ def insert_tweet(conn, table_name, tweet):
     )
     try:
         cur.execute(q_insert, values)
+        conn.commit()
     except Exception as e:
+        conn.rollback()
         print(e)
         return False
     return True

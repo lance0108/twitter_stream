@@ -22,7 +22,7 @@ class PgListener(StreamListener):
         insert_tweet(self.conn, self.target_table, tweet)
         self.counter += 1
         if self.counter % 100 == 0:
-            self.conn.commit()
+            # self.conn.commit()
             print(
                 get_time(),
                 " | ",
