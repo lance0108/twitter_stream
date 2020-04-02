@@ -1,7 +1,7 @@
 import time
 
 from credentials import API_CREDENTIALS
-from streaming import get_time, start_streaming
+from streaming_mg import get_time, start_streaming
 
 if __name__ == "__main__":
     credential = API_CREDENTIALS[2817015]
@@ -20,7 +20,8 @@ if __name__ == "__main__":
             print(get_time(), " | ", "Reset")
             start_streaming(
                 credential,
-                target_table,
+                target_db="corona",
+                target_coll="track",
                 tracks=tracks
             )
         except Exception as e:
