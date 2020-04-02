@@ -22,6 +22,9 @@ class MongodListener(StreamListener):
 
     def on_data(self, raw_data):
         tweet = json.loads(raw_data)
+        if not "created_at" in tweet.keys():
+            print(tweet)
+            return False
         tweet["created_at"] = pd.to_datetime(tweet["created_at"])
         try:
             self.target_coll.insert_one(tweet)
