@@ -22,9 +22,9 @@ class MongodListener(StreamListener):
 
     def on_data(self, raw_data):
         tweet = json.loads(raw_data)
-        if not "created_at" in tweet.keys():
+        if "limit" in tweet.keys():
             print(tweet)
-            return False
+            return
         tweet["created_at"] = pd.to_datetime(tweet["created_at"])
         try:
             self.target_coll.insert_one(tweet)
@@ -44,6 +44,7 @@ class MongodListener(StreamListener):
     def on_error(self, status_code):
         print(status_code)
         if status_code == 420:
+            time.sleep(60)
             # returning False in on_data disconnects the stream
             return False
             # should I raise an exception here?
