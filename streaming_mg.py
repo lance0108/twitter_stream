@@ -23,6 +23,7 @@ class MongodListener(StreamListener):
     def on_data(self, raw_data):
         tweet = json.loads(raw_data)
         if "limit" in tweet.keys():
+            # This happens when more messages are matched than delivered.
             print(tweet)
             return
         tweet["created_at"] = pd.to_datetime(tweet["created_at"])

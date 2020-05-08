@@ -4,7 +4,7 @@ from credentials import API_CREDENTIALS
 from streaming_mg import get_time, start_streaming
 
 if __name__ == "__main__":
-    credential = API_CREDENTIALS[2817015]
+    credential = API_CREDENTIALS[6782177]
     target_table = "twitter.corona"
     tracks = [
         "coronavirus",
